@@ -6,9 +6,9 @@
 #include <Wire.h>
 
 //GAME SCREEN
-#include "SPI.h"
-#include "Adafruit_GFX.h"
-#include "Adafruit_ILI9341.h"
+#include <SPI.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_ILI9341.h>
 
 // For the Adafruit shield, these are the default.
 #define TFT_DC 9
