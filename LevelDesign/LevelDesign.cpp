@@ -22,6 +22,7 @@ Level level(20);
 
 int main (void)
 {
+    tft.begin();
     //SETUP
     setup();
     //LOOP
