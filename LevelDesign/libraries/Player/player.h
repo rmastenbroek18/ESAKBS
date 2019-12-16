@@ -13,6 +13,7 @@ typedef enum {
 class player
 {
     public:
+        player(uint8_t playerNO);
         void move(direction);
         uint16_t getXpos(void);
         uint16_t getYPos(void);
