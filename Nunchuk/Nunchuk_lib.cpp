@@ -8,11 +8,11 @@
 #include <Nunchuk.h>
 
 
-Nunchuk_lib(){
+Nunchuk_lib::Nunchuk_lib(){
   nunchuk_setup();
 }
 
-void nunchuk_setup () {
+void Nunchuk_lib::nunchuk_setup () {
 
     Wire.begin();
 
@@ -23,7 +23,7 @@ void nunchuk_setup () {
     nunchuk_init();
 }
 
-uint8_t nunchuk_update() {
+uint8_t Nunchuk_lib::nunchuk_update() {
     if (nunchuk_read()) {
       uint16_t control = nunchuk_print();
       switch(control)

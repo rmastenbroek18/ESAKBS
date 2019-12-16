@@ -14,6 +14,6 @@ class Nunchuk_lib
         Nunchuk_lib(void);
         void nunchuk_setup(void);
         uint8_t nunchuk_update(void);
-
-
 }
+
+#endif
