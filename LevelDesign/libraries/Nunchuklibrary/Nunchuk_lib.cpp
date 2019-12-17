@@ -6,7 +6,7 @@
 //Wire should be above nunchuk.h
 #include <Nunchuk_lib.h>
 #include <Nunchuk.h>
-
+#include <player.h>
 
 Nunchuk_lib::Nunchuk_lib(){
   nunchuk_setup();
@@ -25,39 +25,6 @@ void Nunchuk_lib::nunchuk_setup () {
 
 uint8_t Nunchuk_lib::nunchuk_update() {
     if (nunchuk_read()) {
-      uint16_t control = nunchuk_print();
-      switch(control)
-      {
-        case UP:
-        {
-          return 0xC4;
-        }
-        break;
-        case DOWN:
-        {
-          return 0xC8;
-        }
-        break;
-        case LEFT:
-        {
-          return 0xD0;
-        }
-        break;
-        case RIGHT:
-        {
-          return 0xE0;
-        }
-        break;
-        case Z:
-        {
-          return 0xD6;
-        }
-         break;
-        case C:
-        {
-          return 0xEA;
-        }
-        break;
-      }
+      return nunchuk_print();
     }
 }

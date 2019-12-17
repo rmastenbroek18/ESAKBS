@@ -1,9 +1,9 @@
 #ifndef Level_h
 #define Level_h
 
-#include "SPI.h"
-#include "Adafruit_GFX.h"
-#include "Adafruit_ILI9341.h"
+#include <SPI.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_ILI9341.h>
 
 typedef enum {
   EMPTY,    //0  //Empty grid
@@ -17,10 +17,12 @@ typedef enum {
 class Level
 {
     public:
-        Level(int gridformaat);
+        Level(uint32_t gridformaat);
         void createLevel(Adafruit_ILI9341 tft);
         void createBackground(Adafruit_ILI9341 tft);
-        void createObject(int y, int x, Object ob, uint16_t color, Adafruit_ILI9341 tft);
+        void createObject(uint16_t y, uint16_t x, Object ob, uint16_t color, Adafruit_ILI9341 tft);
+        void createObject(uint16_t y, uint16_t x, Object ob, Adafruit_ILI9341 tft);
+        uint8_t check_collision(uint16_t y, uint16_t x,uint8_t direction);
         //Should be the same as _gridhoogte & _gridbreedte
         Object grid[12][16];
     private:

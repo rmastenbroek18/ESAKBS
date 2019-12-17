@@ -5,16 +5,17 @@
  * Copyright (c) 2016, Robert Eisele (robert@xarg.org)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  **/
+#ifndef Nunchuk_h
+#define Nunchuk_h
 
-enum Buttons {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT,
-    Z,
-    C,
-    IDLE
-};
+// define nunchuck values
+#define UP 0xC4
+#define DOWN 0xC8
+#define LEFT 0xD0
+#define RIGHT 0xE0
+#define BUT_C 0xEA
+#define BUT_Z 0xD6
+#define IDLE 0x00
 
 // Calibration joystick values
 #define NUNCHUK_JOYSTICK_X_ZERO 128
@@ -107,7 +108,7 @@ static int16_t nunchuk_joystickY() {
 /**
  * A handy function to print either verbose information of the Nunchuk or a CSV stream for Processing
  */
-enum Buttons nunchuk_print() {
+uint8_t nunchuk_print() {
     if(nunchuk_joystickX() < -NUNCHUK_RADIUS && nunchuk_joystickY() > -NUNCHUK_RADIUS && nunchuk_joystickY() < NUNCHUK_RADIUS){
         //Serial.print("LEFT \n");
         return LEFT;
@@ -126,13 +127,15 @@ enum Buttons nunchuk_print() {
     }
     else if(nunchuk_buttonC() == 1){
         //Serial.print("C \n");
-        return C;
+        return BUT_C;
     }
     else if(nunchuk_buttonZ() == 1){
         //Serial.print("Z \n");
-        return Z;
+        return BUT_Z;
     }
     else {
         return IDLE;
     }
 }
+
+#endif

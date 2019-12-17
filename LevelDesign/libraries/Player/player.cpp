@@ -10,24 +10,23 @@ Player::Player(uint8_t playerNO){
     }
 }
 
-void Player::move(direction direction1){ // moves player location based on input
-    switch(direction1)
+void Player::move(uint8_t nunchuk_data){ // moves player location based on input
+    facing = nunchuk_data;
+    switch(nunchuk_data)
     {
-        case UP:
+        case 0xC4:
             yPos++;
-            facing = UP;
             break;
-        case DOWN:
+        case 0xC8:
             yPos--;
-            facing = DOWN;
             break;
-        case LEFT:
+        case 0xD0:
             xPos--;
-            facing = LEFT;
             break;
-        case RIGHT:
+        case 0xE0:
             xPos++;
-            facing = RIGHT;
+            break;
+        default:
             break;
     }
 }
@@ -41,15 +40,15 @@ uint8_t Player::die(void){ // return 1 for game over, 0 for lives left == enough
     }
 }
 
-direction Player::getFacing(void){
+uint8_t Player::getFacing(void){
     return facing;
 }
 
-uint16_t Player::getYPos(void){ // return y
+uint16_t Player::getYPos(){ // return y
     return yPos;
 }
 
-uint16_t Player::getXpos(void){ // return x
+uint16_t Player::getXpos(){ // return x
     return xPos;
 }
 
