@@ -6,8 +6,8 @@
 #include <util/delay.h>
 #include <Arduino.h>
 #include <Wire.h>
+//Wire should be above nunchuk.h
 #include <Nunchuk.h>
-#include <Level.h>
 
 class Nunchuk_lib
 {

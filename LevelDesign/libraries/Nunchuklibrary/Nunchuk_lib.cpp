@@ -1,12 +1,4 @@
-#include <avr/io.h>
-#include <stdint.h>
-#include <util/delay.h>
-#include <Arduino.h>
-#include <Wire.h>
-//Wire should be above nunchuk.h
 #include <Nunchuk_lib.h>
-#include <Nunchuk.h>
-#include <player.h>
 
 Nunchuk_lib::Nunchuk_lib(){
   nunchuk_setup();

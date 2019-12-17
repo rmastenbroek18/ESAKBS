@@ -1,19 +1,19 @@
 #include <avr/io.h>
 #include <util/delay.h>
-#define BAUD 9600
+#define BAUD 9600   // nodig voor twi_setFrequency
 #include <util/setbaud.h>
 #include <Arduino.h>
 #include <Wire.h>
-
-//GAME SCREEN
-#include <SPI.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_ILI9341.h>
 
 // including own libraries
 #include <Level.h>
 #include <Nunchuk_lib.h>
 #include <player.h>
+
+//GAME SCREEN
+#include <SPI.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_ILI9341.h>
 
 // For the Adafruit shield, these are the default.
 #define TFT_DC 9
