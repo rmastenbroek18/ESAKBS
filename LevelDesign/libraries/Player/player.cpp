@@ -48,7 +48,7 @@ uint16_t Player::getYPos(){ // return y
     return yPos;
 }
 
-uint16_t Player::getXpos(){ // return x
+uint16_t Player::getXPos(){ // return x
     return xPos;
 }
 
