@@ -1,5 +1,6 @@
-#ifndef player_h
-#define player_h
+#ifndef Player_h
+#define Player_h
+#include "stdint.h"
 
 // for player 1(x = 1,y = 1), for player 2(x = 13 ,y = 9)
 
@@ -10,11 +11,11 @@ typedef enum {
     RIGHT
 } direction;
 
-class player
+class Player
 {
     public:
-        player(uint8_t playerNO);
-        void move(direction);
+        Player(uint8_t playerNO);
+        void move(direction direction1);
         uint16_t getXpos(void);
         uint16_t getYPos(void);
         uint8_t die(void);
@@ -26,6 +27,6 @@ class player
         uint16_t yPos = 1;
         direction facing = UP;
 
-}
+};
 
 #endif

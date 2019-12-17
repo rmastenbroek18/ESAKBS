@@ -1,6 +1,6 @@
 #include <player.h>
 
-player::player(uint8_t playerNO){
+Player::Player(uint8_t playerNO){
     if(playerNO == 1){
         xPos = 1;
         yPos = 1;
@@ -10,26 +10,29 @@ player::player(uint8_t playerNO){
     }
 }
 
-void player::move(direction){ // moves player location based on input
-        switch(direction)
-        {
+void Player::move(direction direction1){ // moves player location based on input
+    switch(direction1)
+    {
         case UP:
             yPos++;
             facing = UP;
             break;
         case DOWN:
             yPos--;
+            facing = DOWN;
             break;
         case LEFT:
             xPos--;
+            facing = LEFT;
             break;
         case RIGHT:
             xPos++;
+            facing = RIGHT;
             break;
-        }
+    }
 }
 
-uint8_t player::die(void){ // return 1 for game over, 0 for lives left == enough
+uint8_t Player::die(void){ // return 1 for game over, 0 for lives left == enough
     if(lives < 2){
         return 1;
     }else{
@@ -38,15 +41,15 @@ uint8_t player::die(void){ // return 1 for game over, 0 for lives left == enough
     }
 }
 
-direction player::getFacing(void){
+direction Player::getFacing(void){
     return facing;
 }
 
-uint16_t player::getYPos(void){ // return y
+uint16_t Player::getYPos(void){ // return y
     return yPos;
 }
 
-uint16_t player::getXpos(void){ // return x
+uint16_t Player::getXpos(void){ // return x
     return xPos;
 }
 
