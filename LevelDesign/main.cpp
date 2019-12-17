@@ -5,7 +5,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-// including own libraries
+// including libraries
 #include <Level.h>
 #include <Nunchuk_lib.h>
 #include <player.h>
