@@ -38,7 +38,7 @@ void Level::createLevel(Adafruit_ILI9341 tft)
     }
   }
 }
-
+/*
 void Level::createObject(uint16_t y, uint16_t x, Object ob, Adafruit_ILI9341 tft){
   if(ob == EMPTY){
     createObject(y,x,ob,ILI9341_BLACK,tft);
@@ -50,7 +50,7 @@ void Level::createObject(uint16_t y, uint16_t x, Object ob, Adafruit_ILI9341 tft
     createObject(y,x,ob,ILI9341_RED,tft);
   }
 }
-
+*/
 void Level::createObject(uint16_t y, uint16_t x, Object ob, uint16_t color, Adafruit_ILI9341 tft){
   grid[x][y] = ob;
   uint16_t ypos = y * 20;

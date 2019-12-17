@@ -9,12 +9,21 @@
 //Wire should be above nunchuk.h
 #include <Nunchuk.h>
 
-class Nunchuk_lib
-{
-    public:
-        Nunchuk_lib(void);
-        void nunchuk_setup(void);
-        uint8_t nunchuk_update(void);
-};
+    static void nunchuk_setup() {
+
+    Wire.begin();
+
+    //Change TWI speed for nunchuk, which uses Fast-TWI (400kHz)
+    Wire.setClock(400000);
+
+    //nunchuk_init_power(); //A1 and A2 is power supply
+    nunchuk_init();
+    }
+
+    static uint8_t nunchuk_update() {
+    if (nunchuk_read()) {
+      return nunchuk_print();
+        }
+    }
 
 #endif
